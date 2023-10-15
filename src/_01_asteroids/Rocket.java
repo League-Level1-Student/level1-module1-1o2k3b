@@ -19,16 +19,26 @@ public class Rocket implements GameControlScene {
 	boolean fire = false;
 	boolean restart = false;
 public Rocket() {
-	x = AsteroidsGame.WIDTH;
-	y = AsteroidsGame.HEIGHT;
+	x = AsteroidsGame.WIDTH/2;
+	y = AsteroidsGame.HEIGHT/2;
+	size = 10;
+			collisionBox = new Rectangle(x-size/2, y - size/2, size, size);
 }
+			public Rocket(int x, int y) {
+			this.x = x;
+			this.y = y;
+			
+}
+
 	/*
 	 * 2. A constructor does not have a return type and must be named the same as
 	 * the class i.e. public Rocket(){
 	 * 
-	
+	 
 	 * 
-	 * x = AsteroidsGame.WIDTH / 2 y = AsteroidsGame.HEIGHT / 2 size = 10
+	 * x = AsteroidsGame.WIDTH / 2 
+	 * y = AsteroidsGame.HEIGHT / 2 
+	 * size = 10
 	 * 
 	 * and
 	 * 
