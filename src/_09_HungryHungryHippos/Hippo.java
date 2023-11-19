@@ -22,11 +22,11 @@ public class Hippo {
         setupPosition();
     }
     
-    void draw(Graphics g) {
+    void draw(Graphics g, Color f) {
         /*
          * Local variables
          */
-        Color bodyColor = Color.GRAY;
+        Color bodyColor = f;
         String hippoName = "Hippie Hippo";
         
         drawScore(g, hippoName);
@@ -309,4 +309,9 @@ public class Hippo {
 
         updatePosition();
     }
+
+	public void draw(int i, int j, int k) {
+		// TODO Auto-generated method stub
+		
+	}
 }
