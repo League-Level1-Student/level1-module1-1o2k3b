@@ -44,14 +44,14 @@ public class TurfWar extends PApplet {
         boolean moveRight = false;
         int pixelCount = 0;
 
-        void drawPlayer(Graphics g) {
+        void drawPlayer() {
             /*
              * 2. Draw a rectangle to represent the the Player using its color,
              * coordinates and size.
              */
-        	g.setColor(Color.RED);
-            g.fillRect(this.x, this.y, playerSize, playerSize);
         	
+            rect(this.x, this.y, playerSize, playerSize);
+            fill(playerColor);
         }
 
         void update() {
@@ -73,10 +73,16 @@ public class TurfWar extends PApplet {
              * Note: You do not need to use the statsBoardLine for the 
              * other directions.
              */
-            if (moveDown && y < statsBoardLine) {
+            if (moveDown && y<height) {
                 y+=speed;  
         }
+           if(moveRight && x<width) {
+            x+=speed;
             }
+  if(moveLeft && x>height) {
+	  x-=speed;
+  }
+           }
 
         // You do not need to change any other Player methods.
         void enableMovement(int keyDown) {
@@ -146,6 +152,7 @@ public class TurfWar extends PApplet {
     @Override
     public void settings() {
         // 5. Set the size for your sketch. Make it at least 300x300.
+       size(500, 500);
        
     }
 
@@ -158,11 +165,11 @@ public class TurfWar extends PApplet {
         ((java.awt.Canvas) surface.getNative()).requestFocus();
 
         // 6. Set the background color.
-
+        background(0,0,0);
 
         // 7. Call the noStroke Method.
         
-        
+        noStroke();
         /*
          * 8. Initialize the two Player objects. For one use UP, LEFT, DOWN,
          * RIGHT for the keys, for the second use the W,A,S,D final int 
@@ -175,7 +182,7 @@ public class TurfWar extends PApplet {
          * not select black, white or the color you used for your background as it
          * will give that player an unfair advantage.
          */
-
+//Player PlayerUP = new Player(UP, LEFT, DOWN, RIGHT);
         
     }
 
